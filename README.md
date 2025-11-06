@@ -11,9 +11,9 @@ This is a **Docker** cleanup script for **Linux**, written in **Bash**. It delet
 git clone https://github.com/LaggerIsME/docker-cleanup.git
 ```
 2. Download and install the Ansible: https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html
-3. Move to the `~/ansible` directory:
+3. Move to the `~/ansible/` directory:
 ```bash
-cd ansible 
+cd ansible/ 
 ```
 4. Copy the `example.hosts` to `hosts`:
 ```bash
