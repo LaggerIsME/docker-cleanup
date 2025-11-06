@@ -70,3 +70,6 @@ crontab -e
 ```
 
 After all these actions, the **script** will clear your **Linux** every day at 01:00.
+
+### Logs
+Script execution logs you can find in `/var/log/docker-cleanup.log`.
