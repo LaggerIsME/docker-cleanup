@@ -1,0 +1,1 @@
+<hostname> ansible_host="<server_ip>" ansible_user="<username>" ansible_become_password="<user_password>" ansible_password="<user_password>"

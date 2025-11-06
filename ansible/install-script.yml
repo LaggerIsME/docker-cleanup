@@ -1,0 +1,32 @@
+---
+- name: Install docker-cleanup.sh to remote Linux server
+  become: true
+  hosts: all
+  tasks:
+    - name: Copy the script to /opt directory.
+      ansible.builtin.copy:
+        src: "../docker-cleanup.sh"
+        dest: "/opt/docker-cleanup.sh"
+        mode: 755
+
+    - name: Copy the script from /opt to /root.
+      ansible.builtin.copy:
+        src: "/opt/docker-cleanup.sh"
+        dest: "/root/docker-cleanup.sh"
+        owner: root
+        group: root
+        mode: 0755
+        remote_src: true
+
+    - name: Remove the script from /opt.
+      ansible.builtin.file:
+        path: /opt/docker-cleanup.sh
+        state: absent
+
+    - name: Create a cron job to activate docker-cleanup.sh at 01:00 every day for the root user.
+      ansible.builtin.cron:
+        name: "Activate docker-cleanup.sh"
+        minute: "0"
+        hour: "1"
+        job: "/root/docker-cleanup.sh"
+        user: root
