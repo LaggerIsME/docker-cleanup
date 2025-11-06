@@ -22,8 +22,8 @@ cp example.hosts hosts
 ```
 5. Configure `variables` in `.hosts` file:
 ```bash
-test_server_1 ansible_host="192.168.122.58" ansible_user="test" ansible_become_password="testpassword" ansible_password="testpassword"
-test_server_1 ansible_host="192.168.122.59" ansible_user="test2" ansible_become_password="testpassword2" ansible_password="testpassword2"
+test_server_1 ansible_host="192.168.122.58" ansible_user="test_sudo_user" ansible_become_password="testpassword" ansible_password="testpassword"
+test_server_2 ansible_host="192.168.122.59" ansible_user="test_sudo_user2" ansible_become_password="testpassword2" ansible_password="testpassword2"
 ```
 6. Activate `ansible-playbook`:
 * With default `hosts` file:
